@@ -31,11 +31,13 @@ A modern, full-stack typing speed test application built with Angular frontend a
 ## 📸 Screenshots
 
 ### Authentication
-[Screenshot: Login Page]
+<img width="1512" height="824" alt="image" src="https://github.com/user-attachments/assets/61041109-9c8a-44d3-87b8-a7a4aea9ad0b" />
+
 - Clean login form with email/password authentication
 - Responsive design with validation feedback
 
-[Screenshot: Registration Page]
+<img width="1512" height="823" alt="image" src="https://github.com/user-attachments/assets/4f73add5-e355-4b35-9fbf-63474efaebca" />
+
 - User registration with username, email, and password
 - Real-time validation and error handling
 
@@ -46,38 +48,39 @@ A modern, full-stack typing speed test application built with Angular frontend a
 - Recent tests display with performance metrics
 
 ### Typing Test
-[Screenshot: Test Selection]
+<img width="1512" height="821" alt="image" src="https://github.com/user-attachments/assets/f0363190-8486-4282-a4d0-0b5f9e00b9e2" />
+
 - Choose from public texts or personal uploads
 - Text preview with word count and difficulty indicators
 
-[Screenshot: Test Configuration]
+<img width="884" height="820" alt="image" src="https://github.com/user-attachments/assets/2d343680-d3ca-43ce-b5f9-44beea1cce10" />
+
 - Customize word count (1-500 words)
 - Select starting position with visual text preview
 - Resume from last position option
 
-[Screenshot: Active Typing Test]
+<img width="1270" height="820" alt="image" src="https://github.com/user-attachments/assets/48475887-e733-4023-a071-a84060bfede2" />
+
 - Real-time typing interface with character highlighting
 - Live statistics display (WPM, accuracy, time, errors)
 - Progress tracking and completion status
 
-[Screenshot: Test Results]
-- Detailed performance summary
-- Comparison with personal bests
-- Option to retry or try different texts
-
 ### Content Management
-[Screenshot: Books Library]
+<img width="1512" height="828" alt="image" src="https://github.com/user-attachments/assets/e4e3b743-7143-48fe-badc-ba6bc865b4ee" />
+
 - Browse public texts with search functionality
 - Filter by author, title, or description
 - Quick access to start tests
 
-[Screenshot: My Books]
+<img width="1512" height="982" alt="image" src="https://github.com/user-attachments/assets/16ea3241-67a5-4895-b370-37e37ea4fae4" />
+
 - Personal text management
 - Upload, edit, and delete functionality
 - Public/private visibility controls
 
 ### Leaderboard
-[Screenshot: Global Leaderboard]
+<img width="1512" height="821" alt="image" src="https://github.com/user-attachments/assets/9322d2d4-e5a3-42b6-a91d-0304db5aca77" />
+
 - Top performers by WPM and accuracy
 - User rankings with detailed statistics
 - Tab navigation between different metrics
@@ -92,16 +95,15 @@ A modern, full-stack typing speed test application built with Angular frontend a
 - **RxJS**: Reactive programming for state management
 
 ### Backend
-- **.NET 9**: Latest .NET framework
+- **.NET 9=8**: Latest .NET framework
 - **Entity Framework Core**: ORM for database operations
 - **PostgreSQL**: Reliable database system
 - **JWT Authentication**: Secure token-based auth
-- **BCrypt**: Password hashing and verification
 
 ### Development Tools
 - **Angular CLI**: Development and build tools
 - **Entity Framework Migrations**: Database schema management
-- **Swagger/OpenAPI**: API documentation
+- **Swagger**: API documentation
 - **Git**: Version control
 
 ## 📋 Prerequisites
@@ -110,7 +112,7 @@ Before running the application, ensure you have the following installed:
 
 - **Node.js** (v18 or higher)
 - **npm** (comes with Node.js)
-- **.NET 9 SDK**
+- **.NET 8 SDK**
 - **PostgreSQL** (v12 or higher)
 - **Git**
 
@@ -228,38 +230,6 @@ The application uses PostgreSQL with Entity Framework Core. Key tables:
 - `GET /api/typing-tests` - Get test results
 - `POST /api/typing-tests` - Save test results
 
-## 🧪 Testing
-
-### Backend Tests
-```bash
-cd speedtype.API
-dotnet test
-```
-
-### Frontend Tests
-```bash
-cd speedtype-frontend
-npm test
-```
-
-## 📦 Deployment
-
-### Production Build
-```bash
-# Frontend
-cd speedtype-frontend
-npm run build
-
-# Backend
-cd speedtype.API
-dotnet publish -c Release
-```
-
-### Docker Support
-```bash
-# Build and run with Docker Compose
-docker-compose up --build
-```
 
 ## 🤝 Contributing
 
@@ -269,9 +239,6 @@ docker-compose up --build
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🆘 Support
 
@@ -302,5 +269,3 @@ If you encounter any issues:
 ---
 
 **Built with ❤️ using Angular and .NET Core**
-
-*SpeedType - Improve your typing skills, one test at a time.* 
