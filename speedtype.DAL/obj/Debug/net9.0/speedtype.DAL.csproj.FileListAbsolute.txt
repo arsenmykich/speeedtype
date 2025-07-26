@@ -1,0 +1,14 @@
+/Users/user/projects/speedtype/speedtype.DAL/bin/Debug/net9.0/speedtype.DAL.deps.json
+/Users/user/projects/speedtype/speedtype.DAL/bin/Debug/net9.0/speedtype.DAL.runtimeconfig.json
+/Users/user/projects/speedtype/speedtype.DAL/bin/Debug/net9.0/speedtype.DAL.dll
+/Users/user/projects/speedtype/speedtype.DAL/bin/Debug/net9.0/speedtype.DAL.pdb
+/Users/user/projects/speedtype/speedtype.DAL/obj/Debug/net9.0/speedtype.DAL.csproj.AssemblyReference.cache
+/Users/user/projects/speedtype/speedtype.DAL/obj/Debug/net9.0/speedtype.DAL.GeneratedMSBuildEditorConfig.editorconfig
+/Users/user/projects/speedtype/speedtype.DAL/obj/Debug/net9.0/speedtype.DAL.AssemblyInfoInputs.cache
+/Users/user/projects/speedtype/speedtype.DAL/obj/Debug/net9.0/speedtype.DAL.AssemblyInfo.cs
+/Users/user/projects/speedtype/speedtype.DAL/obj/Debug/net9.0/speedtype.DAL.csproj.CoreCompileInputs.cache
+/Users/user/projects/speedtype/speedtype.DAL/obj/Debug/net9.0/speedtype.DAL.dll
+/Users/user/projects/speedtype/speedtype.DAL/obj/Debug/net9.0/refint/speedtype.DAL.dll
+/Users/user/projects/speedtype/speedtype.DAL/obj/Debug/net9.0/speedtype.DAL.pdb
+/Users/user/projects/speedtype/speedtype.DAL/obj/Debug/net9.0/speedtype.DAL.genruntimeconfig.cache
+/Users/user/projects/speedtype/speedtype.DAL/obj/Debug/net9.0/ref/speedtype.DAL.dll

@@ -1,0 +1,210 @@
+// Dashboard Component - Minimalistic Design
+
+.container-fluid {
+  background: var(--light-gray);
+  min-height: 100vh;
+}
+
+// Stats cards
+.stats-card {
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .card-body {
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+  
+  .card-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 1rem;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+  }
+}
+
+// Quick actions
+.quick-actions {
+  .card {
+    border: none;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .card-header {
+    background: white;
+    border-bottom: 1px solid var(--medium-gray);
+    padding: 1.5rem;
+    
+    h5 {
+      margin: 0;
+      color: var(--dark-gray);
+      font-weight: 600;
+    }
+  }
+  
+  .btn {
+    min-height: 48px;
+    font-weight: 500;
+  }
+}
+
+// Recent tests section
+.recent-tests {
+  .test-item {
+    padding: 1rem;
+    border-bottom: 1px solid var(--medium-gray);
+    transition: background-color 0.2s ease;
+    
+    &:hover {
+      background: var(--light-gray);
+    }
+    
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  
+  .test-stats {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    
+    .stat {
+      font-size: 0.875rem;
+      color: var(--secondary-color);
+      
+      .value {
+        font-weight: 600;
+        color: var(--dark-gray);
+      }
+    }
+  }
+  
+  .test-date {
+    font-size: 0.75rem;
+    color: var(--secondary-color);
+  }
+}
+
+// Books section
+.books-section {
+  .book-item {
+    padding: 1rem;
+    border-bottom: 1px solid var(--medium-gray);
+    display: flex;
+    justify-content: between;
+    align-items: center;
+    transition: background-color 0.2s ease;
+    
+    &:hover {
+      background: var(--light-gray);
+    }
+    
+    &:last-child {
+      border-bottom: none;
+    }
+    
+    .book-info {
+      flex: 1;
+      
+      .book-title {
+        font-weight: 600;
+        color: var(--dark-gray);
+        margin-bottom: 0.25rem;
+      }
+      
+      .book-author {
+        font-size: 0.875rem;
+        color: var(--secondary-color);
+      }
+    }
+    
+    .btn {
+      min-width: 80px;
+    }
+  }
+}
+
+// Empty states
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--secondary-color);
+  
+  .empty-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+  }
+  
+  .empty-text {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .empty-hint {
+    font-size: 0.875rem;
+  }
+}
+
+// Loading state
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1rem;
+  
+  .spinner-border {
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    color: var(--secondary-color);
+    font-weight: 500;
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .stats-card {
+    .card-body {
+      padding: 1.5rem 1rem;
+    }
+    
+    h2 {
+      font-size: 2rem;
+    }
+  }
+  
+  .quick-actions {
+    .btn {
+      margin-bottom: 0.5rem;
+    }
+  }
+  
+  .books-section .book-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    
+    .btn {
+      width: 100%;
+    }
+  }
+} 

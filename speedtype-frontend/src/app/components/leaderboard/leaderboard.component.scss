@@ -1,0 +1,286 @@
+// Leaderboard Component - Consistent Minimalistic Design
+
+.container-fluid {
+  background: var(--light-gray);
+  min-height: 100vh;
+}
+
+// Navigation styling
+.navbar {
+  background: white !important;
+  box-shadow: var(--shadow-sm);
+  
+  .navbar-brand {
+    color: var(--primary-color) !important;
+    font-weight: 700;
+    cursor: pointer;
+    
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  
+  .navbar-text {
+    color: var(--dark-gray) !important;
+    font-weight: 500;
+  }
+  
+  .btn-outline-secondary {
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    
+    &:hover {
+      background: var(--secondary-color);
+      color: white;
+    }
+  }
+}
+
+// Page header
+h2 {
+  color: var(--dark-gray);
+  font-weight: 600;
+  margin: 0;
+  
+  .fa-trophy {
+    color: var(--warning-color);
+  }
+}
+
+// Tab navigation
+.nav-pills {
+  background: white;
+  border-radius: var(--border-radius);
+  padding: 0.25rem;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 2rem;
+  
+  .nav-item {
+    .nav-link {
+      color: var(--secondary-color);
+      font-weight: 500;
+      border-radius: 6px;
+      padding: 0.5rem 1rem;
+      transition: all 0.2s ease;
+      border: none;
+      font-size: 0.875rem;
+      
+      &:hover {
+        background: var(--light-gray);
+        color: var(--dark-gray);
+      }
+      
+      &.active {
+        background: var(--primary-color);
+        color: white;
+        box-shadow: var(--shadow-sm);
+      }
+      
+      .fas {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}
+
+// Leaderboard table
+.leaderboard-table {
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  
+  // Table styling
+  .table {
+    margin: 0;
+    
+    thead {
+      th {
+        background: var(--light-gray);
+        border: none;
+        color: var(--dark-gray);
+        font-weight: 600;
+        padding: 1rem 0.75rem;
+        font-size: 0.875rem;
+        letter-spacing: 0.25px;
+      }
+    }
+    
+    tbody {
+      tr {
+        border: none;
+        transition: background-color 0.2s ease;
+        
+        &:hover {
+          background: var(--light-gray);
+        }
+        
+        &.table-warning {
+          background: rgba(37, 99, 235, 0.05) !important;
+          
+          &:hover {
+            background: rgba(37, 99, 235, 0.1) !important;
+          }
+        }
+        
+        td {
+          border: none;
+          padding: 1rem 0.75rem;
+          vertical-align: middle;
+          font-size: 0.875rem;
+        }
+      }
+    }
+  }
+}
+
+// Rank badges
+.rank-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 0.75rem;
+  
+  &.rank-1 {
+    background: #fbbf24;
+    color: white;
+  }
+  
+  &.rank-2 {
+    background: #9ca3af;
+    color: white;
+  }
+  
+  &.rank-3 {
+    background: #d97706;
+    color: white;
+  }
+  
+  &.rank-other {
+    background: var(--light-gray);
+    color: var(--secondary-color);
+  }
+}
+
+// Empty state
+.text-center {
+  .fa-trophy {
+    color: var(--secondary-color);
+    opacity: 0.6;
+  }
+  
+  h4 {
+    color: var(--dark-gray);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .text-muted {
+    margin-bottom: 1.5rem;
+  }
+}
+
+// Loading state
+.spinner-border {
+  color: var(--primary-color);
+}
+
+// Alert styling
+.alert-danger {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: var(--danger-color);
+  border-radius: var(--border-radius);
+}
+
+// Card styling to match other components
+.card {
+  border: 2px solid transparent;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+  
+  .card-header {
+    background: white;
+    border-bottom: 1px solid var(--light-gray);
+    padding: 1rem 1.5rem;
+    
+    h5 {
+      color: var(--dark-gray);
+      font-weight: 600;
+      margin: 0;
+      
+      .fas {
+        color: var(--primary-color);
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}
+
+// User avatar styling
+.user-avatar {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--light-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--secondary-color);
+  font-size: 0.875rem;
+}
+
+// Metric value styling
+.metric-value {
+  font-weight: 600;
+}
+
+// Badge styling
+.badge {
+  &.bg-info {
+    background: var(--primary-color) !important;
+  }
+  
+  &.bg-secondary {
+    background: var(--secondary-color) !important;
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  .nav-pills {
+    .nav-item .nav-link {
+      padding: 0.4rem 0.75rem;
+      font-size: 0.8rem;
+    }
+  }
+  
+  .table {
+    thead th,
+    tbody td {
+      padding: 0.75rem 0.5rem;
+      font-size: 0.8rem;
+    }
+    
+    .rank-badge {
+      width: 1.5rem;
+      height: 1.5rem;
+      font-size: 0.7rem;
+    }
+    
+    .user-avatar {
+      width: 1.75rem;
+      height: 1.75rem;
+      font-size: 0.8rem;
+    }
+  }
+} 

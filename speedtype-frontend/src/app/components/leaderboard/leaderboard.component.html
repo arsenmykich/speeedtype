@@ -1,0 +1,143 @@
+<div class="container-fluid">
+  <!-- Navigation Header -->
+  <nav class="navbar navbar-expand-lg mb-4">
+    <div class="container">
+      <a class="navbar-brand" href="#" (click)="goToDashboard()">SpeedType</a>
+      <div class="navbar-nav ms-auto">
+        <span class="navbar-text me-3" *ngIf="currentUser">{{ currentUser.username }}</span>
+        <button class="btn btn-outline-secondary btn-sm me-2" (click)="startTypingTest()">Take Test</button>
+        <button class="btn btn-outline-secondary btn-sm" (click)="goToDashboard()">Dashboard</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <!-- Page Header -->
+    <div class="row mb-4">
+      <div class="col-12">
+        <h2><i class="fas fa-trophy me-2 text-warning"></i>Leaderboard</h2>
+      </div>
+    </div>
+
+    <!-- Leaderboard Tabs -->
+    <div class="row mb-4" *ngIf="!isLoading && leaderboardData.length > 0">
+      <div class="col-12">
+        <ul class="nav nav-pills justify-content-center">
+          <li class="nav-item">
+            <button 
+              class="nav-link"
+              [class.active]="activeTab === 'wpm'"
+              (click)="switchTab('wpm')"
+            >
+              <i class="fas fa-tachometer-alt me-2"></i>Top WPM
+            </button>
+          </li>
+          <li class="nav-item">
+            <button 
+              class="nav-link"
+              [class.active]="activeTab === 'accuracy'"
+              (click)="switchTab('accuracy')"
+            >
+              <i class="fas fa-bullseye me-2"></i>Top Accuracy
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+    <!-- Full Leaderboard Table -->
+    <div class="row" *ngIf="!isLoading && leaderboardData.length > 0">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <h5 class="mb-0">
+              <i class="fas fa-list me-2"></i>
+              Full Rankings - {{ activeTab === 'wpm' ? 'Words Per Minute' : 'Accuracy' }}
+            </h5>
+          </div>
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              <table class="table table-hover mb-0">
+                <thead class="table-light">
+                  <tr>
+                    <th scope="col" class="text-center" style="width: 80px;">Rank</th>
+                    <th scope="col">User</th>
+                    <th scope="col" class="text-center">Best WPM</th>
+                    <th scope="col" class="text-center">Best Accuracy</th>
+                    <th scope="col" class="text-center">Avg WPM</th>
+                    <th scope="col" class="text-center">Avg Accuracy</th>
+                    <th scope="col" class="text-center">Tests</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr 
+                    *ngFor="let entry of leaderboardData; let i = index"
+                    [class.table-warning]="isCurrentUser(entry.user.id)"
+                  >
+                    <td class="text-center">
+                      <span class="rank-badge" [ngClass]="getRankBadgeClass(entry.rank)">
+                        {{ entry.rank }}
+                      </span>
+                    </td>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        
+                        <div>
+                          <strong>{{ entry.user.username }}</strong>
+                          <span class="badge bg-info ms-2" *ngIf="isCurrentUser(entry.user.id)">You</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <span class="metric-value">{{ entry.wpm }}</span>
+                    </td>
+                    <td class="text-center">
+                      <span class="metric-value">{{ entry.accuracy | number:'1.1-1' }}%</span>
+                    </td>
+                    <td class="text-center">
+                      <span class="metric-value text-muted">{{ entry.averageWpm | number:'1.0-0' }}</span>
+                    </td>
+                    <td class="text-center">
+                      <span class="metric-value text-muted">{{ entry.averageAccuracy | number:'1.1-1' }}%</span>
+                    </td>
+                    <td class="text-center">
+                      <span class="badge bg-secondary">{{ entry.testCount }}</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Empty State -->
+    <div class="row" *ngIf="!isLoading && leaderboardData.length === 0">
+      <div class="col-12">
+        <div class="text-center py-5">
+          <i class="fas fa-trophy fa-3x text-muted mb-3"></i>
+          <h4>No scores yet</h4>
+          <p class="text-muted">Be the first to take a typing test and claim the top spot!</p>
+          <button class="btn btn-primary btn-lg" (click)="startTypingTest()">
+            <i class="fas fa-keyboard me-2"></i>Take Your First Test
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Error Message -->
+    <div class="alert alert-danger" *ngIf="errorMessage">
+      <i class="fas fa-exclamation-triangle me-2"></i>{{ errorMessage }}
+    </div>
+  </div>
+
+  <!-- Loading Spinner -->
+  <div class="container text-center" *ngIf="isLoading">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <p class="mt-3">Loading leaderboard...</p>
+  </div>
+</div> 

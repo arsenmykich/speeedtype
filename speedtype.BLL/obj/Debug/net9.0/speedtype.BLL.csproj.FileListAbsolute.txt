@@ -1,0 +1,15 @@
+/Users/user/projects/speedtype/speedtype.BLL/bin/Debug/net9.0/speedtype.BLL.deps.json
+/Users/user/projects/speedtype/speedtype.BLL/bin/Debug/net9.0/speedtype.BLL.dll
+/Users/user/projects/speedtype/speedtype.BLL/bin/Debug/net9.0/speedtype.BLL.pdb
+/Users/user/projects/speedtype/speedtype.BLL/bin/Debug/net9.0/speedtype.DAL.dll
+/Users/user/projects/speedtype/speedtype.BLL/bin/Debug/net9.0/speedtype.DAL.pdb
+/Users/user/projects/speedtype/speedtype.BLL/obj/Debug/net9.0/speedtype.BLL.csproj.AssemblyReference.cache
+/Users/user/projects/speedtype/speedtype.BLL/obj/Debug/net9.0/speedtype.BLL.GeneratedMSBuildEditorConfig.editorconfig
+/Users/user/projects/speedtype/speedtype.BLL/obj/Debug/net9.0/speedtype.BLL.AssemblyInfoInputs.cache
+/Users/user/projects/speedtype/speedtype.BLL/obj/Debug/net9.0/speedtype.BLL.AssemblyInfo.cs
+/Users/user/projects/speedtype/speedtype.BLL/obj/Debug/net9.0/speedtype.BLL.csproj.CoreCompileInputs.cache
+/Users/user/projects/speedtype/speedtype.BLL/obj/Debug/net9.0/speedtyp.F7C98354.Up2Date
+/Users/user/projects/speedtype/speedtype.BLL/obj/Debug/net9.0/speedtype.BLL.dll
+/Users/user/projects/speedtype/speedtype.BLL/obj/Debug/net9.0/refint/speedtype.BLL.dll
+/Users/user/projects/speedtype/speedtype.BLL/obj/Debug/net9.0/speedtype.BLL.pdb
+/Users/user/projects/speedtype/speedtype.BLL/obj/Debug/net9.0/ref/speedtype.BLL.dll

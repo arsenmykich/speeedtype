@@ -1,0 +1,127 @@
+<div class="container-fluid">
+  <!-- Navigation Header -->
+  <nav class="navbar navbar-expand-lg mb-4">
+    <div class="container">
+      <a class="navbar-brand" href="#">SpeedType</a>
+              <div class="navbar-nav ms-auto">
+          <span class="navbar-text me-3" *ngIf="currentUser">{{ currentUser.username }}</span>
+          <button class="btn btn-outline-secondary btn-sm" (click)="logout()">Logout</button>
+        </div>
+    </div>
+  </nav>
+
+  <div class="container" *ngIf="!isLoading">
+    <!-- User Stats Cards -->
+    <div class="row mb-4" *ngIf="userStats">
+      <div class="col-md-4">
+        <div class="card text-center stats-card">
+          <div class="card-body">
+            <h5 class="card-title">Average WPM</h5>
+            <h2 class="text-primary">{{ userStats.averageWPM | number:'1.0-0' }}</h2>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-center stats-card">
+          <div class="card-body">
+            <h5 class="card-title">Average Accuracy</h5>
+            <h2 class="text-success">{{ userStats.averageAccuracy | number:'1.1-1' }}%</h2>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-center stats-card">
+          <div class="card-body">
+            <h5 class="card-title">Tests Completed</h5>
+            <h2 class="text-info">{{ recentTests.length }}</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="row mb-4">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <h5 class="mb-0">Quick Actions</h5>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-3 mb-2">
+                <a routerLink="/typing-test" class="btn btn-primary w-100">Start Typing Test</a>
+              </div>
+              <div class="col-md-3 mb-2">
+                <a routerLink="/books" class="btn btn-secondary w-100">Browse Books</a>
+              </div>
+              <div class="col-md-3 mb-2">
+                <a routerLink="/my-books" class="btn btn-info w-100">My Books</a>
+              </div>
+              <div class="col-md-3 mb-2">
+                <a routerLink="/leaderboard" class="btn btn-success w-100">Leaderboard</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Recent Tests -->
+      <div class="col-lg-6 mb-4">
+        <div class="card">
+          <div class="card-header">
+            <h5 class="mb-0">Recent Tests</h5>
+          </div>
+          <div class="card-body">
+            <div *ngIf="recentTests.length === 0" class="text-muted text-center py-3">
+              No tests completed yet. <a routerLink="/typing-test">Start your first test!</a>
+            </div>
+            <div *ngFor="let test of recentTests" class="border-bottom py-2">
+              <div class="d-flex justify-content-between">
+                <div>
+                  <strong>{{ test.wpm }} WPM</strong>
+                  <span class="text-muted">- {{ test.accuracy | number:'1.1-1' }}% accuracy</span>
+                </div>
+                <small class="text-muted">{{ formatDate(test.date) }}</small>
+              </div>
+              <small class="text-muted" *ngIf="test.book">{{ test.book.title }}</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Available Books -->
+      <div class="col-lg-6 mb-4">
+        <div class="card">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <h5 class="mb-0">Popular Books</h5>
+            <a routerLink="/books" class="btn btn-sm btn-outline-primary">View All</a>
+          </div>
+          <div class="card-body">
+            <div *ngIf="publicBooks.length === 0" class="text-muted text-center py-3">
+              No books available yet.
+            </div>
+            <div *ngFor="let book of publicBooks" class="border-bottom py-2">
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <strong>{{ book.title }}</strong>
+                  <div class="text-muted small" *ngIf="book.author">by {{ book.author }}</div>
+                </div>
+                <a [routerLink]="['/typing-test', book.id]" class="btn btn-sm btn-primary">Test</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Loading Spinner -->
+  <div class="container text-center" *ngIf="isLoading">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <p class="mt-3">Loading your dashboard...</p>
+  </div>
+</div> 
